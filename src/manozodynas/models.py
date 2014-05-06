@@ -43,3 +43,10 @@ class User(AbstractBaseUser, PermissionsMixin):
     def get_short_name(self):
         "Returns the short name for the user."
         return self.first_name
+        
+class Terminai(models.Model):
+    en_term = models.CharField(_('angliskas terminas'), max_length=30, blank=True)
+    lt_term = models.CharField(_('lietuviskas terminas'), max_length=30, blank=True)
+    
+    def get_translation(self):
+        return self.lt_term
