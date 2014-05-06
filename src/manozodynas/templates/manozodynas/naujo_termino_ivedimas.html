@@ -13,9 +13,10 @@ Zodyno pildymas.
 Iveskite angliska termina ir jo lietuviska atitikmeni,
 atskirtus kableliu.
 <br>
-<form id="terminui-form" name="input" action="termino_pridejimo_tvirtinimas_neigimas" method="GET">
-Terminai: <input type="text" name="input">
-<input type="submit" value="Submit">
-</form> 
+<form id="terminui-form" action="termino_pridejimo_tvirtinimas_neigimas" method="POST">
+{{ form.as_p }}
+{% csrf_token %}
+<input type="submit" value="Submit"/>
+</form>
 </body>
 </html>
